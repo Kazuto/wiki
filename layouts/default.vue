@@ -1,37 +1,29 @@
 <template>
-  <div
-    id="app"
-    class="relative text-neutral-200"
-  >
-    <vLayoutHeader />
+  <div :class="{ dark: darkMode }">
+    <div
+      class="flex flex-col h-screen bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-200"
+    >
+      <vLayoutHeader @toggled-theme="() => (darkMode = !darkMode)" />
 
-    <main class="my-8">
-      <vContainer>
-        <slot />
-      </vContainer>
-    </main>
+      <main class="my-8 grow">
+        <vContainer>
+          <slot />
+        </vContainer>
+      </main>
 
-    <vLayoutFooter />
+      <vLayoutFooter />
+    </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const darkMode = ref(false);
+</script>
 
 <style lang="postcss">
 html,
 body {
-  @apply bg-neutral-700 antialiased;
-}
-
-#app {
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr auto;
-  grid-template-areas:
-    'header'
-    'main'
-    'footer';
+  @apply antialiased;
 }
 
 ::-webkit-scrollbar {
