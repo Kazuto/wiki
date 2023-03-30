@@ -5,15 +5,17 @@
     >
       <vLayoutHeader @toggled-theme="() => (darkMode = !darkMode)" />
 
-      <main class="my-8 grow">
+      <div class="my-8 grow">
         <vContainer class="flex flex-nowrap gap-4">
           <vSidebarMenu />
 
-          <div class="p-4">
-            <slot />
-          </div>
+          <main class="p-4 grow">
+            <ContentDoc />
+          </main>
+
+          <vSidebarContent />
         </vContainer>
-      </main>
+      </div>
 
       <vLayoutFooter />
     </div>
