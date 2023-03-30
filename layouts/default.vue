@@ -10,7 +10,26 @@
           <vSidebarMenu />
 
           <main class="p-4 grow">
-            <ContentDoc />
+            <ContentDoc v-slot="{ doc }">
+              <h1>{{ doc.title }}</h1>
+              <ContentRenderer :value="doc" />
+            </ContentDoc>
+
+            <div class="flex items-between mt-4">
+              <NuxtLink
+                v-if="prev"
+                class="text-neutral-500 hover:text-neutral-700"
+                :to="prev._path"
+                >&larr; {{ prev.title }}</NuxtLink
+              >
+              <span class="grow"></span>
+              <NuxtLink
+                v-if="next"
+                class="text-neutral-500 hover:text-neutral-700"
+                :to="next._path"
+                >{{ next.title }} &rarr;</NuxtLink
+              >
+            </div>
           </main>
 
           <vSidebarContent />
@@ -24,6 +43,8 @@
 
 <script setup lang="ts">
 const darkMode = ref(false);
+
+const { prev, next } = useContent();
 </script>
 
 <style lang="postcss">
@@ -45,7 +66,24 @@ body {
   @apply bg-neutral-100 dark:bg-neutral-500;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply mb-2 font-bold;
+}
+
 h1 {
-  @apply mb-2;
+  @apply text-2xl;
+}
+
+h2 {
+  @apply text-xl;
+}
+
+h3 {
+  @apply text-lg;
 }
 </style>
