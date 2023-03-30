@@ -3,25 +3,15 @@
     id="app"
     class="relative text-neutral-200"
   >
-    <header class="h-14 border-b border-neutral-500 bg-neutral-600 p-2">
-      <div
-        class="w-full h-full container mx-auto flex items-center justify-between"
-      >
-        Some content
-      </div>
-    </header>
+    <vLayoutHeader />
 
-    <main class="w-full container my-8 mx-auto overflow-y-auto flex-grow">
-      <slot />
+    <main class="my-8">
+      <vContainer>
+        <slot />
+      </vContainer>
     </main>
 
-    <footer class="h-14 border-b border-neutral-500 bg-neutral-600 p-2 text-sm">
-      <div
-        class="w-full h-full container mx-auto flex items-center justify-between"
-      >
-        Some content
-      </div>
-    </footer>
+    <vLayoutFooter />
   </div>
 </template>
 
@@ -41,7 +31,7 @@ body {
   grid-template-areas:
     'header'
     'main'
-    'navigation';
+    'footer';
 }
 
 ::-webkit-scrollbar {
