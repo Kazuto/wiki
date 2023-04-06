@@ -1,5 +1,5 @@
 <template>
-  <header class="h-14 bg-neutral-50 dark:bg-neutral-600 p-2">
+  <header class="h-14 bg-neutral-50 dark:bg-gray-600 p-2">
     <vContainer class="flex items-center justify-between">
       Some content
       <span></span>

@@ -1,7 +1,7 @@
 <template>
   <div :class="{ dark: darkMode }">
     <div
-      class="flex flex-col min-h-screen bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-200"
+      class="flex flex-col min-h-screen bg-neutral-200 dark:bg-gray-700 text-neutral-700 dark:text-neutral-200"
     >
       <vLayoutHeader @toggled-theme="() => (darkMode = !darkMode)" />
 
@@ -66,24 +66,34 @@ body {
   @apply bg-neutral-100 dark:bg-neutral-500;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @apply mb-2 font-bold;
-}
+main {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply mb-2 font-bold;
+  }
 
-h1 {
-  @apply text-2xl;
-}
+  h1 {
+    @apply text-2xl;
+  }
 
-h2 {
-  @apply text-xl;
-}
+  h2 {
+    @apply text-xl my-2;
+  }
 
-h3 {
-  @apply text-lg;
+  h3 {
+    @apply text-lg my-2;
+  }
+
+  pre {
+    @apply my-2 p-4 text-gray-100 dark:text-gray-50 bg-gray-700 dark:bg-gray-800 rounded;
+  }
+
+  p {
+    @apply mb-4 leading-6;
+  }
 }
 </style>
