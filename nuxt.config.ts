@@ -8,6 +8,7 @@ export default defineNuxtConfig({
   components: [{ path: '~/components', prefix: 'v' }],
   postcss: {
     plugins: {
+      'tailwindcss/nesting': {},
       tailwindcss: {},
       autoprefixer: {},
     },
