@@ -7,7 +7,7 @@
 
       <div class="my-8 grow">
         <vContainer class="flex flex-nowrap gap-4">
-          <vSidebarMenu />
+          <vNavigationSidebarMenu />
 
           <main class="p-4 grow">
             <ContentDoc v-slot="{ doc }">
@@ -32,7 +32,7 @@
             </div>
           </main>
 
-          <vSidebarContent />
+          <vNavigationContentMenu />
         </vContainer>
       </div>
 
