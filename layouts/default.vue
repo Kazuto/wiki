@@ -42,9 +42,9 @@
 </template>
 
 <script setup lang="ts">
-const darkMode = ref(false);
-
 const { prev, next } = useContent();
+
+const { darkMode } = useDarkMode();
 </script>
 
 <style lang="postcss">
