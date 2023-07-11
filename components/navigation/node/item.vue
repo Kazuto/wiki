@@ -4,6 +4,11 @@
       v-if="item.children"
       class="uppercase mt-2"
     >
+      <Icon
+        v-if="item.icon"
+        :name="item.icon"
+        class="mr-1"
+      />
       {{ item.title }}
     </h4>
 
