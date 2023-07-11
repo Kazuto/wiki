@@ -9,6 +9,14 @@ export default defineNuxtConfig({
     navigation: {
       fields: ['icon'],
     },
+    highlight: {
+      theme: {
+        default: 'github-light',
+        dark: 'github-dark',
+        sepia: 'monokai',
+      },
+    },
+  },
   css: ['~/assets/css/app.css'],
   components: [{ path: '~/components', prefix: 'v' }],
   postcss: {
