@@ -2,7 +2,7 @@
   <template v-if="isNavItem(item)">
     <h4
       v-if="item.children"
-      class="uppercase mt-2"
+      class="uppercase text-xs py-1 flex items-center"
     >
       <Icon
         v-if="item.icon"
@@ -15,7 +15,7 @@
     <NuxtLink
       v-else
       :to="item._path"
-      class="block my-1 text-sm transition-colors hover:text-primary-500 dark:hover:text-primary-200"
+      class="block text-sm py-1 transition-colors text-gray-400 hover:text-primary-500 dark:hover:text-primary-200"
     >
       {{ item.title }}
     </NuxtLink>
@@ -24,7 +24,7 @@
   <template v-else>
     <a
       :href="`#${item.id}`"
-      class="block mb-1 transition-colors hover:text-primary-500 dark:hover:text-primary-200"
+      class="block text-sm py-1 transition-colors text-gray-400 hover:text-primary-500 dark:hover:text-primary-200"
     >
       {{ item.text }}
     </a>
@@ -42,7 +42,7 @@ defineProps({
 });
 
 const isNavItem = (item: NavItem | TocLink): item is NavItem => {
-  return (<NavItem>item)._path !== undefined;
+  return Object.keys(item).includes('_path');
 };
 </script>
 

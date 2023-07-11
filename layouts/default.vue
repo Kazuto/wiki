@@ -1,42 +1,44 @@
 <template>
   <div :class="{ dark: darkMode }">
     <div
-      class="flex flex-col min-h-screen bg-neutral-200 dark:bg-gray-700 text-neutral-700 dark:text-neutral-200"
+      class="flex flex-col min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-600 dark:text-gray-50"
     >
-      <vLayoutHeader @toggled-theme="() => (darkMode = !darkMode)" />
+      <vLayoutHeader />
 
-      <div class="my-8 grow">
-        <vContainer class="flex flex-nowrap gap-4">
-          <vNavigationSidebarMenu />
+      <vContainer class="flex">
+        <vNavigationSidebarMenu />
 
-          <main class="p-4 grow">
+        <main class="flex p-4 grow">
+          <article>
             <ContentDoc v-slot="{ doc }">
-              <h1>{{ doc.title }}</h1>
+              <h1
+                class="text-4xl font-light pt-4 pb-8 border-b border-gray-100 dark:border-gray-800"
+              >
+                {{ doc.title }}
+              </h1>
               <ContentRenderer :value="doc" />
             </ContentDoc>
 
             <div class="flex items-between mt-4">
               <NuxtLink
                 v-if="prev"
-                class="text-neutral-500 hover:text-neutral-700"
+                class="text-gray-500 dark:text-gray-300 hover:text-primary-500 transition"
                 :to="prev._path"
                 >&larr; {{ prev.title }}</NuxtLink
               >
               <span class="grow"></span>
               <NuxtLink
                 v-if="next"
-                class="text-neutral-500 hover:text-neutral-700"
+                class="text-gray-500 dark:text-gray-300 hover:text-primary-500 transition"
                 :to="next._path"
                 >{{ next.title }} &rarr;</NuxtLink
               >
             </div>
-          </main>
+          </article>
 
           <vNavigationContentMenu />
-        </vContainer>
-      </div>
-
-      <vLayoutFooter />
+        </main>
+      </vContainer>
     </div>
   </div>
 </template>
@@ -73,23 +75,23 @@ main {
   h4,
   h5,
   h6 {
-    @apply mb-2 font-bold;
+    @apply font-bold;
   }
 
   h1 {
-    @apply text-2xl;
+    @apply text-2xl mb-4;
   }
 
   h2 {
-    @apply text-xl my-2;
+    @apply text-xl mt-6 mb-1;
   }
 
   h3 {
-    @apply text-lg my-2;
+    @apply text-lg mt-6 mb-1;
   }
 
   pre {
-    @apply my-2 p-4 text-gray-100 dark:text-gray-50 bg-gray-700 dark:bg-gray-800 rounded;
+    @apply my-2 p-4 bg-neutral-200 dark:bg-gray-800 rounded;
   }
 
   p {

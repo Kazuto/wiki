@@ -1,5 +1,5 @@
 <template>
-  <ul class="mb-3">
+  <ul class="mb-2">
     <li
       v-for="(item, index) in node"
       :key="index"
@@ -9,7 +9,6 @@
       <vNavigationNodeTree
         v-if="item.children"
         :node="item.children"
-        class="pl-2"
         :level="level + 1"
       />
     </li>
