@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-import defaultTheme from 'tailwindcss/defaultTheme'
+import defaultTheme from 'tailwindcss/defaultTheme';
 
 module.exports = {
   darkMode: 'class',
@@ -48,4 +48,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
+};
