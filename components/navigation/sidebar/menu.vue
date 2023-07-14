@@ -2,11 +2,7 @@
   <nav
     class="hidden lg:block w-80 p-8 border-r border-gray-100 dark:border-gray-800"
   >
-    <nuxt-img
-      class="h-auto w-32 mb-8"
-      :src="darkMode ? '/logo_dark.svg' : '/logo_light.svg'"
-      alt="logo"
-    />
+    <vLogo />
     <div class="mb-4">
       <input
         type="text"
@@ -23,7 +19,6 @@
 
 <script setup lang="ts">
 import { NavItem } from '@nuxt/content/dist/runtime/types';
-const { darkMode } = useDarkMode();
 
 const { navigation }: { navigation: Ref<Array<NavItem>> } = useContent();
 </script>
