@@ -9,7 +9,7 @@
       <vNavigationNodeTree
         v-if="item.children"
         :node="item.children"
-        :level="level + 1"
+        class="ml-2"
       />
     </li>
   </ul>
@@ -22,10 +22,6 @@ defineProps({
   node: {
     type: Array as PropType<NavItem[] | TocLink[]>,
     default: () => [],
-  },
-  level: {
-    type: Number,
-    default: 1,
   },
 });
 </script>

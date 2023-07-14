@@ -1,7 +1,7 @@
 <template>
   <template v-if="isNavItem(item)">
     <h4
-      v-if="item.children"
+      v-if="item.is_dir"
       class="uppercase text-xs py-1 flex items-center"
     >
       <Icon
@@ -15,7 +15,7 @@
     <NuxtLink
       v-else
       :to="item._path"
-      class="block text-sm py-1 transition-colors text-gray-400 hover:text-primary-500 dark:hover:text-primary-200"
+      class="block text-sm py-1 pl-2 transition-colors text-gray-400 hover:text-primary-500 dark:hover:text-primary-200"
     >
       {{ item.title }}
     </NuxtLink>
