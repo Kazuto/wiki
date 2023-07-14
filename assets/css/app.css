@@ -18,6 +18,18 @@
     @apply antialiased box-border relative;
   }
 
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-neutral-300 dark:bg-neutral-700;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-neutral-100 dark:bg-neutral-500;
+  }
+
   body,
   html {
     @apply scroll-smooth bg-neutral-100;
@@ -34,5 +46,36 @@
 
   p + p {
     @apply mt-4;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold;
+  }
+
+  h1 {
+    @apply text-2xl mb-4;
+  }
+
+  h2 {
+    @apply text-xl mt-6 mb-1;
+  }
+
+  h3 {
+    @apply text-lg mt-6 mb-1;
+  }
+
+  p {
+    @apply mb-4 leading-6;
+  }
+
+  h2 a:before,
+  h3 a:before {
+    content: '# ';
+    @apply text-primary;
   }
 }
