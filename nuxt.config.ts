@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxt/content', 'nuxt-icon', '@nuxt/image'],
+  modules: ['@nuxt/content', 'nuxt-icon', '@nuxt/image', '@nuxtjs/color-mode'],
+  components: [{ path: '~/components', prefix: 'v' }],
   content: {
     documentDriven: true,
     markdown: {
@@ -17,8 +18,17 @@ export default defineNuxtConfig({
       },
     },
   },
+  colorMode: {
+    preference: 'system',
+    fallback: 'dark',
+    classPrefix: '',
+    classSuffix: '',
+    storageKey: 'theme',
+  },
   css: ['~/assets/css/app.css'],
-  components: [{ path: '~/components', prefix: 'v' }],
+  devtools: {
+    enable: process.env.NODE_ENV !== 'production',
+  },
   postcss: {
     plugins: {
       'tailwindcss/nesting': {},
