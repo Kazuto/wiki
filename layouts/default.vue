@@ -11,7 +11,9 @@
             <vContainer class="flex">
               <article class="p-6">
                 <ContentDoc v-slot="{ doc }">
-                <span class="block mb-2 text-primary font-bold capitalize">{{ doc._dir }}</span>
+                  <span class="block mb-2 text-primary font-bold capitalize">{{
+                    doc._dir
+                  }}</span>
                   <h1 class="text-5xl font-bold mb-4">
                     {{ doc.title }}
                   </h1>
@@ -101,9 +103,34 @@ main {
   }
 
   h2 a:before,
-  h3 a:before,{
-    content: "# ";
+  h3 a:before {
+    content: '# ';
     @apply text-primary;
   }
+}
+
+pre * {
+  font-family: monospace !important;
+}
+
+pre .line {
+  position: relative;
+  padding-left: 3em;
+}
+
+.line::before {
+  position: absolute;
+  pointer-events: none;
+  font-size: 100%;
+  top: 0;
+  left: -0.5em;
+  width: 3em; /* works for line-numbers below 1000 lines */
+}
+
+.line::before {
+  content: attr(line);
+  color: #999;
+  padding-right: 0.8em;
+  text-align: right;
 }
 </style>

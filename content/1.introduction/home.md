@@ -13,7 +13,7 @@ foedus audisse veteremque fugit in de fundit nunc
 [dixit](http://nudautve.org/gladiidaedalon). Praepetis deducunt cervix caerulus
 maerenti: **via e ripae** dixit.
 
-```js [file.js]{4-6,7} meta-info=val
+```js[file.js]
 export default () => {
   console.log('Code block');
 };
