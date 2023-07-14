@@ -1,13 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxt/content', 'nuxt-icon'],
+  modules: ['@nuxt/content', 'nuxt-icon', '@nuxt/image'],
   content: {
     documentDriven: true,
     markdown: {
       toc: { depth: 2, searchDepth: 2 },
     },
     navigation: {
-      fields: ['icon'],
+      fields: ['icon', 'is_dir'],
     },
     highlight: {
       theme: {
