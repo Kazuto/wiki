@@ -11,7 +11,8 @@
             <vContainer class="flex">
               <article class="p-6">
                 <ContentDoc v-slot="{ doc }">
-                  <h1 class="text-4xl font-light mb-4">
+                <span class="block mb-2 text-primary font-bold capitalize">{{ doc._dir }}</span>
+                  <h1 class="text-5xl font-bold mb-4">
                     {{ doc.title }}
                   </h1>
                   <ContentRenderer :value="doc" />
@@ -97,6 +98,12 @@ main {
 
   p {
     @apply mb-4 leading-6;
+  }
+
+  h2 a:before,
+  h3 a:before,{
+    content: "# ";
+    @apply text-primary;
   }
 }
 </style>
