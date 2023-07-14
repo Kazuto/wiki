@@ -1,5 +1,5 @@
 <template>
-  <header class="h-14 border-b border-gray-100 dark:border-gray-800">
+  <header class="h-14 border-b border-gray-100 dark:border-gray-800 px-16">
     <vContainer class="flex items-center justify-between p-4">
       <span></span>
       <button
@@ -15,23 +15,23 @@
 </template>
 
 <script setup lang="ts">
-const { darkMode, setTheme, LOCAL_STORAGE_THEME_KEY } = useDarkMode()
+const { darkMode, setTheme, LOCAL_STORAGE_THEME_KEY } = useDarkMode();
 
 onMounted(() => {
   const isDarkModePreferred = window.matchMedia(
     '(prefers-color-scheme: dark)'
-  ).matches
+  ).matches;
 
-  const theme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY)
+  const theme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY);
 
   if (theme) {
-    setTheme(theme)
+    setTheme(theme);
   } else {
-    setTheme(isDarkModePreferred ? 'dark' : 'light')
+    setTheme(isDarkModePreferred ? 'dark' : 'light');
   }
-})
+});
 
 watch(darkMode, (selected) => {
-  setTheme(selected ? 'dark' : 'light')
-})
+  setTheme(selected ? 'dark' : 'light');
+});
 </script>
