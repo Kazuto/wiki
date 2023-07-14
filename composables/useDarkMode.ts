@@ -16,6 +16,6 @@ export default function useDarkMode() {
   return {
     darkMode,
     setTheme,
-    LOCAL_STORAGE_THEME_KEY
+    LOCAL_STORAGE_THEME_KEY,
   };
 }

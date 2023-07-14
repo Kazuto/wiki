@@ -7,8 +7,8 @@
         <vNavigationSidebarMenu />
         <div>
           <vLayoutHeader />
-            <main class="my-8 mx-16">
-              <vContainer class="flex">
+          <main class="my-8 mx-16">
+            <vContainer class="flex">
               <article class="p-6">
                 <ContentDoc v-slot="{ doc }">
                   <h1 class="text-4xl font-light mb-4">
@@ -35,9 +35,9 @@
               </article>
 
               <vNavigationContentMenu />
-              </vContainer>
-            </main>
-            <vLayoutFooter />
+            </vContainer>
+          </main>
+          <vLayoutFooter />
         </div>
       </div>
     </div>
