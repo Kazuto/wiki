@@ -51,21 +51,4 @@
 const { prev, next, page } = useContent();
 </script>
 
-<style lang="postcss">
-pre {
-  @apply my-2 py-4 px-1 bg-neutral-200 dark:bg-gray-800 rounded;
-}
-
-pre * {
-  @apply font-mono text-sm;
-}
-
-pre code .line {
-  @apply relative pl-12;
-}
-
-pre code .line::before {
-  @apply absolute top-0 -left-2 w-12 pr-3 content-[attr(line)]
-  pointer-events-none text-right text-gray-500 dark:text-gray-300;
-}
-</style>
+<style lang="postcss"></style>

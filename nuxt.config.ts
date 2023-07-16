@@ -1,7 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: ['@nuxt/content', 'nuxt-icon', '@nuxt/image', '@nuxtjs/color-mode'],
-  components: [{ path: '~/components', prefix: 'v' }],
+  components: [
+    {
+      path: '~/components',
+      prefix: 'v',
+    },
+    {
+      path: '~/components/content',
+      global: true,
+    },
+  ],
   content: {
     documentDriven: true,
     markdown: {
