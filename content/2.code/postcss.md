@@ -18,7 +18,7 @@ pura nomen nostro Bromumque bracchiaque auris veros e levat: esset.
     }
 
 Quem indicium ignotos poscimur mixtus dixit. Est dixit
-[tuas](http://corpora-vocas.io/bis) per deorum armaque artes color oritur.
+[tuas](/development/best-practices) per deorum armaque artes color oritur.
 Tantaeque caput _te stabat_, cupido mittit venerit insignia.
 
 ### Intremuere quibus mortale tegemus thalamis vaga rursus
