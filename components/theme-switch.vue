@@ -8,13 +8,16 @@
 </template>
 
 <script setup lang="ts">
+import { ColorModeInstance } from '@nuxtjs/color-mode/dist/runtime/types';
 const colorMode = useColorMode();
 
-const icon = ref('');
+const icon = ref('heroicons:ellipsis-horizontal');
 
-setIcon(colorMode.preference);
+onMounted(() => {
+  setIcon(colorMode.preference);
+});
 
-const setTheme = (theme: string) => {
+const setTheme = (theme: ColorModeInstance['preference']) => {
   switch (theme) {
     case 'system':
       colorMode.preference = 'light';
@@ -28,7 +31,7 @@ const setTheme = (theme: string) => {
   }
 };
 
-function setIcon(theme: string) {
+function setIcon(theme: ColorModeInstance['preference']) {
   switch (theme) {
     case 'system':
       icon.value = 'heroicons-outline:computer-desktop';
@@ -42,7 +45,7 @@ function setIcon(theme: string) {
   }
 }
 
-watch(colorMode, (value: string) => {
+watch(colorMode, (value: ColorModeInstance) => {
   setIcon(value.preference);
 });
 </script>
