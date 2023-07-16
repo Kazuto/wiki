@@ -1,5 +1,7 @@
 <template>
-  <footer class="h-14 bg-neutral-50 dark:bg-neutral-600 p-2 text-sm">
+  <footer
+    class="py-8 px-12 text-sm border-t border-gray-100 dark:border-gray-800"
+  >
     <vContainer class="flex items-center justify-between">
       Some content
     </vContainer>

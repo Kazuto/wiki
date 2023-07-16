@@ -1,20 +1,10 @@
 <template>
-  <header class="h-14 bg-neutral-50 dark:bg-neutral-600 p-2">
-    <vContainer class="flex items-center justify-between">
-      Some content
+  <header class="h-14 border-b border-gray-100 dark:border-gray-800 px-16">
+    <vContainer class="flex items-center justify-between p-4">
       <span></span>
-      <button
-        class="bg-blue-400 p-1 px-3 rounded text-white"
-        @click="() => $emit('toggled-theme')"
-      >
-        Toggle Theme
-      </button>
+      <vThemeSwitch />
     </vContainer>
   </header>
 </template>
 
-<script setup lang="ts">
-defineEmits(['toggled-theme']);
-</script>
-
-<style scoped></style>
+<script setup lang="ts"></script>
