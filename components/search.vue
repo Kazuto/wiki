@@ -1,7 +1,7 @@
 <template>
   <div>
     <button
-      class="flex items-center w-full text-sm text-gray-400 border border-gray-200 dark:border-gray-700 rounded px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-800 transition text-left"
+      class="flex w-full items-center rounded border border-gray-200 px-2 py-1 text-left text-sm text-gray-400 transition hover:bg-gray-100 dark:border-gray-700 dark:hover:bg-gray-800"
       @click.prevent="openSearch"
     >
       <Icon
@@ -12,11 +12,11 @@
     </button>
     <div
       v-if="isSearchOpen"
-      class="fixed z-50 inset-0 bg-black bg-opacity-50"
+      class="fixed inset-0 z-50 bg-black bg-opacity-50"
       @click="closeSearch"
     >
       <div
-        class="bg-gray-100 dark:bg-gray-800 w-1/3 rounded shadow mx-auto mt-56"
+        class="mx-auto mt-56 w-1/3 rounded bg-gray-100 shadow dark:bg-gray-800"
         @click.stop
       >
         <div>
@@ -25,22 +25,22 @@
             v-model="searchQuery"
             type="text"
             placeholder="Search..."
-            class="w-full bg-transparent focus:outline-none border-none p-4 placeholder:text-gray-400"
+            class="w-full border-none bg-transparent p-4 placeholder:text-gray-400 focus:outline-none"
           />
         </div>
 
         <div
           v-if="searchResult.length > 0"
-          class="border-t border-gray-300 dark:border-gray-700 p-2"
+          class="border-t border-gray-300 p-2 dark:border-gray-700"
         >
           <NuxtLink
             v-for="item in searchResult"
             :key="item.title"
             :to="item.item._path"
-            class="block p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded transition"
+            class="block rounded p-2 transition hover:bg-gray-100 dark:hover:bg-gray-700"
           >
             <div>
-              <h2 class="font-bold text-lg">
+              <h2 class="text-lg font-bold">
                 {{ item.item.title }}
               </h2>
               <p class="mb-0 text-sm">{{ item.item.description }}</p>

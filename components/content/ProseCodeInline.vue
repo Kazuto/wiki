@@ -4,6 +4,6 @@
 
 <style lang="postcss" scoped>
 code {
-  @apply font-mono bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded;
+  @apply rounded bg-gray-100 px-1.5 py-0.5 font-mono dark:bg-gray-800;
 }
 </style>

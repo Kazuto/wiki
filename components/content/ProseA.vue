@@ -42,7 +42,7 @@ a {
   @apply text-primary-500 hover:text-primary-800;
 
   > svg {
-    @apply w-3.5 h-auto inline-block mr-0.5 mb-0.5;
+    @apply mb-0.5 mr-0.5 inline-block h-auto w-3.5;
   }
 }
 </style>

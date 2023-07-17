@@ -34,18 +34,18 @@ div[class*='language-'] {
   @apply font-mono text-sm;
 
   pre {
-    @apply my-2 py-4 px-1 bg-neutral-200 dark:bg-gray-800 rounded;
+    @apply my-2 rounded bg-neutral-200 px-1 py-4 dark:bg-gray-800;
 
     code .line {
-      @apply block min-h-[1rem] relative pl-12;
+      @apply relative block min-h-[1rem] pl-12;
 
       &.highlight {
-        @apply bg-black dark:bg-white bg-opacity-10 dark:bg-opacity-10;
+        @apply bg-black bg-opacity-10 dark:bg-white dark:bg-opacity-10;
       }
 
       &::before {
-        @apply absolute top-0 -left-2 w-12 pr-3 content-[attr(line)]
-        pointer-events-none text-right text-gray-500 dark:text-gray-300;
+        @apply pointer-events-none absolute -left-2 top-0 w-12 pr-3
+        text-right text-gray-500 content-[attr(line)] dark:text-gray-300;
       }
     }
   }

@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="py-8 px-12 text-sm border-t border-gray-100 dark:border-gray-800"
+    class="border-t border-gray-100 px-12 py-8 text-sm dark:border-gray-800"
   >
     <vContainer class="flex items-center justify-between">
       Some content
