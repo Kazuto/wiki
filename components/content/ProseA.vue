@@ -31,6 +31,8 @@ onMounted(() => {
 
   if (props.href.startsWith('/')) {
     href = window.location.origin + props.href;
+  } else if (props.href.startsWith('#')) {
+    href = window.location.href + props.href;
   }
 
   isExternal.value = new URL(href).hostname !== window.location.hostname;
@@ -39,7 +41,7 @@ onMounted(() => {
 
 <style lang="postcss" scoped>
 a {
-  @apply text-primary-500 hover:text-primary-800;
+  @apply inline-block text-primary-500 hover:text-primary-800;
 
   > svg {
     @apply mb-0.5 mr-0.5 inline-block h-auto w-3.5;
