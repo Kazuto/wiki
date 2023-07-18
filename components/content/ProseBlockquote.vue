@@ -9,7 +9,7 @@
 <style lang="postcss">
 blockquote {
   > p {
-    @apply mb-0;
+    @apply !mb-0;
   }
 }
 </style>

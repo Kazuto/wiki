@@ -27,7 +27,7 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-primary-200 rounded;
+    @apply rounded bg-primary-200;
   }
 
   body,

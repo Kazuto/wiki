@@ -6,6 +6,10 @@
 
 <style lang="postcss">
 ul {
+  &.contains-task-list {
+    @apply pl-0;
+  }
+
   ul {
     @apply !mb-0;
   }
