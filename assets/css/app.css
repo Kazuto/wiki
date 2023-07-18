@@ -47,8 +47,8 @@
   p {
     @apply mb-4 leading-6;
 
-    + p {
-      @apply mt-4;
+    &:has(+ p) {
+      @apply mb-2;
     }
   }
 }
