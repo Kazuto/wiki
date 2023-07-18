@@ -15,7 +15,7 @@
 
 @layer base {
   * {
-    @apply relative box-border antialiased;
+    @apply box-border antialiased;
   }
 
   ::-webkit-scrollbar {
@@ -23,16 +23,16 @@
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-neutral-300 dark:bg-neutral-700;
+    @apply bg-gray-600;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-neutral-100 dark:bg-neutral-500;
+    @apply bg-primary-200 rounded;
   }
 
   body,
   html {
-    @apply scroll-smooth bg-neutral-100;
+    @apply scroll-smooth;
   }
 
   body {
@@ -42,13 +42,5 @@
   b,
   strong {
     @apply font-bold;
-  }
-
-  p {
-    @apply mb-4 leading-6;
-
-    &:has(+ p) {
-      @apply mb-2;
-    }
   }
 }

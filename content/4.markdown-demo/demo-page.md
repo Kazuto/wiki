@@ -5,7 +5,7 @@ description: 'Demo page for markdown formatting'
 
 This markdown code showcases various elements and formatting options available in Markdown.
 
-## Headings
+## Heading 2
 
 ### Heading 3
 
@@ -15,7 +15,7 @@ This markdown code showcases various elements and formatting options available i
 
 ## Emphasis
 
-Italic: _Italic Text_ or _Italic Text_
+Italic: _Italic Text_
 
 Bold: **Bold Text**
 
@@ -43,7 +43,7 @@ Bold and Italic: **_Bold and Italic Text_**
 
 [External Link to Google](https://www.google.com)
 
-[Intenral Link](/introduction/home)
+[Internal Link](/introduction/home)
 
 ## Images
 
@@ -53,6 +53,8 @@ Bold and Italic: **_Bold and Italic Text_**
 
 > This is a blockquote.
 > It can span multiple lines.
+> Here's another line in the blockquote.
+> And one more line for good measure.
 
 ## Code
 
