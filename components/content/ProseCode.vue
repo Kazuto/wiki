@@ -1,5 +1,8 @@
 <template>
-  <div>
+  <div
+    :filename="filename"
+    class="group relative font-mono text-sm"
+  >
     <slot />
   </div>
 </template>
@@ -31,7 +34,9 @@ defineProps({
 
 <style lang="postcss">
 div[class*='language-'] {
-  @apply font-mono text-sm;
+  &::after {
+    @apply pointer-events-none absolute right-2 top-2 h-full w-full select-none text-right text-gray-500 content-[attr(filename)] dark:text-gray-400;
+  }
 
   pre {
     @apply my-2 rounded bg-neutral-200 px-1 py-4 dark:bg-gray-800;
