@@ -2,7 +2,7 @@
   <template v-if="isNavItem(item)">
     <h4
       v-if="item.is_dir"
-      class="flex items-center py-1 text-xs uppercase"
+      class="mt-2 flex items-center py-1 text-xs uppercase"
     >
       <Icon
         v-if="item.icon"
