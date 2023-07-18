@@ -1,7 +1,7 @@
 <template>
   <div>
     <button
-      class="flex w-full items-center rounded border border-gray-200 px-2 py-1 text-left text-sm text-gray-400 transition hover:bg-gray-100 dark:border-gray-700 dark:hover:bg-gray-800"
+      class="relative flex w-full items-center rounded border border-gray-200 px-2 py-1 text-left text-sm text-gray-400 transition hover:bg-gray-100 dark:border-gray-700 dark:hover:bg-gray-800"
       @click.prevent="openSearch"
     >
       <Icon
@@ -9,6 +9,20 @@
         class="mr-1"
       />
       Search...
+      <div
+        class="pointer-events-none absolute right-2 flex cursor-none gap-1 text-xs"
+        aria-label="Press CTRL +
+        K to open search"
+      >
+        <span
+          class="rounded bg-gray-100 px-1 py-0.5 dark:bg-gray-800 dark:text-gray-200"
+          >CTRL</span
+        >
+        <span
+          class="rounded bg-gray-100 px-1 py-0.5 dark:bg-gray-800 dark:text-gray-200"
+          >K</span
+        >
+      </div>
     </button>
     <div
       v-if="isSearchOpen"
@@ -70,6 +84,16 @@ const options = {
 
 onMounted(async () => {
   await getContent();
+
+  window.addEventListener('keydown', (e: KeyboardEvent) => {
+    if (e.ctrlKey && e.key === 'k') {
+      isSearchOpen.value = !isSearchOpen.value;
+    }
+
+    if (e.key === 'Escape') {
+      isSearchOpen.value = false;
+    }
+  });
 });
 
 async function getContent() {
