@@ -1,6 +1,6 @@
 <template>
   <button
-    class="p-1 px-3 rounded text-gray-500 dark:text-gray-300 text-lg"
+    class="rounded p-1 px-3 text-lg text-gray-500 dark:text-gray-300"
     @click="setTheme(colorMode.preference)"
   >
     <Icon :name="icon" />

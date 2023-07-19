@@ -6,5 +6,6 @@
   "trailingComma": "es5",
   "arrowParens": "always",
   "vueIndentScriptAndStyle": false,
-  "singleAttributePerLine": true
+  "singleAttributePerLine": true,
+  "plugins": ["prettier-plugin-tailwindcss"]
 }

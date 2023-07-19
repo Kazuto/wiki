@@ -3,11 +3,11 @@
     :href="href"
     :target="target || (isExternal ? '_blank' : undefined)"
   >
-    <slot />
     <Icon
       v-if="isExternal"
       name="heroicons:arrow-top-right-on-square"
     />
+    <slot />
   </NuxtLink>
 </template>
 
@@ -27,21 +27,24 @@ const props = defineProps({
 const isExternal = ref(false);
 
 onMounted(() => {
-  const tmp = document.createElement('a');
-  tmp.href = props.href;
+  let href = props.href;
 
-  isExternal.value = tmp.host !== window.location.host;
+  if (props.href.startsWith('/')) {
+    href = window.location.origin + props.href;
+  } else if (props.href.startsWith('#')) {
+    href = window.location.href + props.href;
+  }
 
-  tmp.remove();
+  isExternal.value = new URL(href).hostname !== window.location.hostname;
 });
 </script>
 
 <style lang="postcss" scoped>
 a {
-  @apply inline-flex items-center text-primary-500 hover:text-primary-800;
+  @apply inline-block text-primary-500 hover:text-primary-800;
 
   > svg {
-    @apply w-3.5 h-auto inline-block ml-1;
+    @apply mb-0.5 mr-0.5 inline-block h-auto w-3.5;
   }
 }
 </style>

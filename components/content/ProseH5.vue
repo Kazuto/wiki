@@ -23,7 +23,7 @@ const generate =
 
 <style lang="postcss" scoped>
 h5 {
-  @apply font-bold text-lg mt-3 mb-1;
+  @apply mb-1 mt-3 text-lg font-bold;
 
   a:before {
     content: '# ';

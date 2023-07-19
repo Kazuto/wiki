@@ -1,6 +1,6 @@
 <template>
-  <nav class="sticky top-2 z-10 hidden lg:block w-full h-fit max-w-xs p-4">
-    <span class="block font-light uppercase text-xs mb-2">On This Page</span>
+  <nav class="sticky top-2 z-10 hidden h-fit w-full max-w-xs p-4 lg:block">
+    <span class="mb-2 block text-xs font-light uppercase">On This Page</span>
 
     <VNavigationNodeTree
       v-if="toc && toc.links"

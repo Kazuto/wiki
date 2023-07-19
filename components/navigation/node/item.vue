@@ -2,7 +2,7 @@
   <template v-if="isNavItem(item)">
     <h4
       v-if="item.is_dir"
-      class="uppercase text-xs py-1 flex items-center"
+      class="mt-2 flex items-center py-1 text-xs uppercase"
     >
       <Icon
         v-if="item.icon"
@@ -15,7 +15,7 @@
     <NuxtLink
       v-else
       :to="item._path"
-      class="block text-sm py-1 pl-2 transition-colors text-gray-400 hover:text-primary-500 dark:hover:text-primary-200"
+      class="block py-1 pl-2 text-sm text-gray-400 transition-colors hover:text-primary-500 dark:hover:text-primary-200"
     >
       {{ item.title }}
     </NuxtLink>
@@ -24,7 +24,7 @@
   <template v-else>
     <a
       :href="`#${item.id}`"
-      class="block text-sm py-1 transition-colors text-gray-400 hover:text-primary-500 dark:hover:text-primary-200"
+      class="block py-1 text-sm text-gray-400 transition-colors hover:text-primary-500 dark:hover:text-primary-200"
     >
       {{ item.text }}
     </a>
@@ -48,10 +48,10 @@ const isNavItem = (item: NavItem | TocLink): item is NavItem => {
 
 <style lang="postcss">
 .router-link-active {
-  @apply text-primary-500 font-medium;
+  @apply font-medium text-primary-500;
 }
 
 .router-link-exact-active {
-  @apply text-primary-400 font-medium;
+  @apply font-medium text-primary-400;
 }
 </style>
