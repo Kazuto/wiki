@@ -30,7 +30,7 @@
       @click="closeSearch"
     >
       <div
-        class="mx-auto mt-56 w-1/3 rounded bg-gray-100 shadow dark:bg-gray-800"
+        class="mx-4 mt-56 rounded bg-gray-100 shadow dark:bg-gray-800 md:mx-auto md:w-2/3 lg:w-2/3 xl:w-1/3"
         @click.stop
       >
         <div>
