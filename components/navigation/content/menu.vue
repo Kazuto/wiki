@@ -1,5 +1,5 @@
 <template>
-  <nav class="sticky top-2 z-10 hidden h-fit w-full max-w-xs p-4 lg:block">
+  <nav class="h-fit w-full max-w-xs">
     <span class="mb-2 block text-xs font-light uppercase">On This Page</span>
 
     <VNavigationNodeTree
