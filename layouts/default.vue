@@ -27,9 +27,19 @@
 </template>
 
 <script setup lang="ts">
+const route = ref<string>(useRoute().fullPath);
+
 const { page } = useContent();
 
 const menuState = useMenuState();
+
+watch(
+  route,
+  () => {
+    menuState.value = false;
+  },
+  { deep: true, immediate: true }
+);
 
 watch(menuState, (value) => {
   if (value) {
