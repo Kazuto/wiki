@@ -16,7 +16,6 @@
       v-else
       :to="item._path"
       class="block py-1 pl-2 text-sm text-gray-400 transition-colors hover:text-primary-500 dark:hover:text-primary-200"
-      @click="menuState = false"
     >
       {{ item.title }}
     </NuxtLink>
@@ -34,8 +33,6 @@
 
 <script setup lang="ts">
 import { NavItem, TocLink } from '@nuxt/content/dist/runtime/types';
-
-const menuState = useMenuState();
 
 defineProps({
   item: {
