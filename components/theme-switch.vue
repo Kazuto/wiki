@@ -1,6 +1,7 @@
 <template>
   <ClientOnly>
     <button
+      v-bind="$attrs"
       :aria-label="`Switch to ${getNextTheme()} mode`"
       class="rounded p-1 px-3 text-lg text-gray-500 dark:text-gray-300"
       @click="setTheme(colorMode.preference)"
