@@ -1,10 +1,13 @@
 <template>
-  <button
-    class="rounded p-1 px-3 text-lg text-gray-500 dark:text-gray-300"
-    @click="setTheme(colorMode.preference)"
-  >
-    <Icon :name="icon" />
-  </button>
+  <ClientOnly>
+    <button
+      :aria-label="`Switch to ${getNextTheme()} mode`"
+      class="rounded p-1 px-3 text-lg text-gray-500 dark:text-gray-300"
+      @click="setTheme(colorMode.preference)"
+    >
+      <Icon :name="icon" />
+    </button>
+  </ClientOnly>
 </template>
 
 <script setup lang="ts">
@@ -17,18 +20,16 @@ onMounted(() => {
   setIcon(colorMode.preference);
 });
 
-const setTheme = (theme: ColorModeInstance['preference']) => {
-  switch (theme) {
-    case 'system':
-      colorMode.preference = 'light';
-      break;
-    case 'light':
-      colorMode.preference = 'dark';
-      break;
-    case 'dark':
-      colorMode.preference = 'system';
-      break;
-  }
+const themeOrder = ['system', 'light', 'dark'];
+
+const getNextTheme = (): string => {
+  return (
+    themeOrder[themeOrder.indexOf(colorMode.preference) + 1] ?? themeOrder[0]
+  );
+};
+
+const setTheme = () => {
+  colorMode.preference = getNextTheme();
 };
 
 function setIcon(theme: ColorModeInstance['preference']) {

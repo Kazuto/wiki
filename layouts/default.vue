@@ -2,16 +2,13 @@
   <div class="bg-gray-50 text-gray-600 dark:bg-gray-900 dark:text-gray-100">
     <div class="grid min-h-screen lg:grid-cols-[auto_1fr]">
       <vNavigationSidebarMenu />
-      <vNavigationSidebarMenuMobile
-        v-show="isMenuOpen"
-        @toggle-menu="isMenuOpen = false"
-      />
+      <vNavigationSidebarMenuMobile v-if="menuState" />
 
       <div class="flex flex-col">
-        <vLayoutHeader @toggle-menu="isMenuOpen = true" />
+        <vLayoutHeader class="px-8 lg:px-16" />
 
-        <main class="mx-8 my-8 flex-grow xl:mx-16">
-          <vContainer class="xl:p-6">
+        <main class="flex-grow p-8 lg:px-16 lg:py-12">
+          <vContainer>
             <vLayoutArticle
               v-if="page"
               class="flex-grow"
@@ -23,7 +20,7 @@
           </vContainer>
         </main>
 
-        <vLayoutFooter />
+        <vLayoutFooter class="p-8 lg:px-16" />
       </div>
     </div>
   </div>
@@ -32,9 +29,9 @@
 <script setup lang="ts">
 const { page } = useContent();
 
-const isMenuOpen = ref(false);
+const menuState = useMenuState();
 
-watch(isMenuOpen, (value) => {
+watch(menuState, (value) => {
   if (value) {
     document.body.classList.add('overflow-hidden');
   } else {

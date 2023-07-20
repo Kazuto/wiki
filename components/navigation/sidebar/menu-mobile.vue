@@ -4,13 +4,7 @@
   >
     <div class="flex justify-between">
       <vLogo />
-      <button
-        class="flex h-10 w-10 items-center justify-center rounded text-2xl transition hover:bg-gray-100 dark:hover:bg-gray-800"
-        aria-label="Close menu"
-        @click="() => $emit('toggleMenu')"
-      >
-        <Icon name="heroicons:x-mark" />
-      </button>
+      <vNavigationMenuButton />
     </div>
     <div class="mb-4">
       <vSearch />
