@@ -1,6 +1,6 @@
 <template>
   <div class="lg:flex lg:gap-8">
-    <article>
+    <article class="flex-grow">
       <span
         v-if="dirName"
         class="mb-2 block font-bold capitalize text-primary"

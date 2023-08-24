@@ -9,10 +9,7 @@
 
         <main class="flex-grow p-8 lg:px-16 lg:py-12">
           <vContainer>
-            <vLayoutArticle
-              v-if="page"
-              class="flex-grow"
-            >
+            <vLayoutArticle v-if="page">
               <slot />
             </vLayoutArticle>
 
